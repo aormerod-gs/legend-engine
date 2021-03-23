@@ -1,0 +1,14 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "type": "java",
+          "name": "Debug (Launch)",
+          "request": "launch",
+          "mainClass": "org.finos.legend.engine.server.Server", 
+          "args": "server legend-engine-server/src/test/resources/org/finos/legend/engine/server/test/userTestConfig.json"
+      }
+  ]
+}
