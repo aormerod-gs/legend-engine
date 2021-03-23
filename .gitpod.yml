@@ -7,6 +7,6 @@ ports:
 - port: 9090
   onOpen: open-preview
 
-vscode:
-  extensions:
-    - redhat.java
+#vscode:
+#  extensions:
+#    - redhat.java
