@@ -115,8 +115,10 @@ public class PackageableElementSecondPassBuilder implements PackageableElementVi
         ctx.addInferredVariables("this", thisVariable);
 
         RichIterable<QualifiedProperty<?>> qualifiedProperties = ListIterate.collect(srcClass.qualifiedProperties, HelperModelBuilder.processQualifiedPropertyFirstPass(this.context, _class, this.context.pureModel.buildPackageString(srcClass._package, srcClass.name), ctx));
-        _class._originalMilestonedProperties(ListIterate.collect(srcClass.originalMilestonedProperties, HelperModelBuilder.processProperty(this.context, _classGenericType, _class)))
-                ._generalizations(generalization)
+        ((org.finos.legend.pure.m3.coreinstance.meta.pure.metamodel.type.Class) _class
+                ._originalMilestonedProperties(ListIterate.collect(srcClass.originalMilestonedProperties,
+                        HelperModelBuilder.processProperty(this.context, _classGenericType, _class)))
+                ._generalizations(generalization))
                 ._qualifiedProperties(qualifiedProperties)
                 ._properties(withMilestoningProperties);
         ctx.flushVariable("this");
