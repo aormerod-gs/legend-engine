@@ -441,11 +441,18 @@ function <<access.private>> meta::pure::tds::multipleColumnComp(row:TDSRow[1], o
 
 
 function 
-   {doc.doc = 'Remove duplicate rows from the priovded TDS'}
+   {doc.doc = 'Remove duplicate rows from the provided TDS'}
    meta::pure::tds::distinct(tds:TabularDataSet[1]):TabularDataSet[1]
 {
    fail('Not implemented yet!');
    $tds;
+}
+
+function <<functionType.NormalizeRequiredFunction>> meta::pure::tds::concatenate(tdsCollection : TabularDataSet[1..*]) : TabularDataSet[1]
+{
+   if($tdsCollection->size() == 1, 
+    | $tdsCollection->toOne(), 
+    | $tdsCollection->at(0)->concatenate($tdsCollection->tail()))
 }
 
 function 
